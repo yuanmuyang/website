@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -24,68 +23,21 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="free_mex">
+  <meta name="apple-mobile-web-app-title" content="website">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <title>free_mex</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>website</title>
   <link rel="manifest" href="manifest.json">
-
-  <script>
-    var callback = null
-    function hcaptchaFunction(fn, siteKey) {
-      callback = fn
-      var script = document.createElement("script");
-      script.async = true
-      script.onload = function () {
-        hcaptcha.render("recaptcha", {
-          sitekey: siteKey
-        });
-      }
-      script.src = "https://hcaptcha.com/1/api.js";
-      document.querySelector("head").appendChild(script);
-    }
-    function onSubmit(res) {
-      // 这里调用回调函数
-      document.querySelector(".grecaptcha-badge").remove();
-      callback(res)
-    }
-    function onError(res) {
-      console.log(res);
-    }
-  </script>
-
-  <script>
-    function recaptchaFunc(fn, siteKey) {
-      var key = siteKey
-      var script = document.createElement("script");
-      script.async = true
-      script.onload = function () {
-        {
-          grecaptcha.ready(function () {
-            grecaptcha.execute(key, { action: "onload" }).then(function (token) {
-              document.querySelector(".grecaptcha-badge").remove();
-              fn(token);
-            });
-          });
-
-        };
-      }
-      script.src = "https://www.recaptcha.net/recaptcha/api.js??onload=onloadCallback&render=" + key;
-      document.querySelector("head").appendChild(script);
-    }
-  </script>
-
 </head>
-
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-
-  <div id="recaptcha" data-callback="onSubmit"></div>
-
   <script>
-    var serviceWorkerVersion = '3221778893';
+    var serviceWorkerVersion = '402035325';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -149,5 +101,4 @@
     }
   </script>
 </body>
-
 </html>
